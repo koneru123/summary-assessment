@@ -96,4 +96,4 @@ function strangeSub(x) {
 var result = strangeSub(14);
 */
 
-const answerFive = -14;
+const answerFive = -12;
