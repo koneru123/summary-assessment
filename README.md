@@ -4,7 +4,7 @@ Make sure to commit often, and when it is time to submit your solution follow th
 
 For your solution to be considered correct for any problem, at a minimum it must produce the stated output for the inputs given in the prompt (the example).
 
-Prioritize problems with basic- at the start of their name.
+Warm up problems have basic- at the start of their name.
 
 ## Disallowed Resources
 - [ ] Previous work of any kind (yours, others', notes, blog posts...)
