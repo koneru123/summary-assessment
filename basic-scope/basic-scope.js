@@ -14,9 +14,9 @@ After the following code runs, what will be the value of result?
 
 var x = 10;
 
-function outer () {
+function outer() {
   x = 20;
-  function inner () {
+  function inner() {
     var x = x + 20;
     return x;
   }
@@ -28,7 +28,8 @@ outer();
 var result = x;
 */
 
-const answerOne = FILL_ME_IN;
+// x has a global scope whose value is 10, after the outer function is invoked, x is set to 20 (function scope). Which gets assigned to result
+const answerOne = 20;
 
 // Question 2
 /*
@@ -42,7 +43,8 @@ function doStuff(arr) {
 doStuff(myArray);
 */
 
-const answerTwo = FILL_ME_IN;
+// nothing changed in the myArray variable, so it should still be the same
+const answerTwo = [2, 3, 4, 5];
 
 // Question 3
 /*
@@ -57,7 +59,9 @@ set(10);
 var result = get(20);
 */
 
-const answerThree = FILL_ME_IN;
+// function set does not have a return statement
+// when invoking get function with 20 as a parameter it should return 30
+const answerThree = 30;
 
 // Question 4
 /*
@@ -73,7 +77,7 @@ In the above, someFunction has access to what variables? Put them as strings in 
 example: [ 'globalVariable' ]
 */
 
-const answerFour = [ FILL_ME_IN ];
+const answerFour = [ 'globalVariable', 'localVariable' ];
 
 // Question 5
 /*
@@ -92,4 +96,4 @@ function strangeSub(x) {
 var result = strangeSub(14);
 */
 
-const answerFive = FILL_ME_IN;
+const answerFive = -14;
