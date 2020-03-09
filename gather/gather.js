@@ -40,6 +40,10 @@ var truncate = function(val) {
   return Math.floor(val);
 }
 
+var length = function(val) {
+  return val.length;
+}
+
 var gather = function(collection, iteratee) {
   let gatherObj = {};
   if(arguments.length === 1) {
@@ -73,11 +77,12 @@ var gather = function(collection, iteratee) {
             gatherObj[iteratee(collection[i])].push(collection[i]);
           }
         } else if(typeof(collection[i]) === 'string') {
-          if(gatherObj[collection[i].length]) {
-            gatherObj[collection[i].length].push(collection[i]);
+          arguments[1] = length(collection[i]);
+          if(gatherObj[arguments[1]]) {
+            gatherObj[arguments[1]].push(collection[i]);
           } else {
-            gatherObj[collection[i].length] = [];
-            gatherObj[collection[i].length].push(collection[i]);
+            gatherObj[arguments[1]] = [];
+            gatherObj[arguments[1]].push(collection[i]);
           }
         }
       }
