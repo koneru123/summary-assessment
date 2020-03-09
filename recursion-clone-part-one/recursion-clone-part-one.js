@@ -13,7 +13,25 @@ array1[3] === array2[3] // also returns false, because you've made a deep copy s
 
 */
 
-
 var copyArray = function(array) {
-  // Your code here.
+  //debugger;
+  let newCopyArr = [];
+  for(let i = 0; i < array.length; i++) {
+    let individualArrayEle = array[i];
+    //console.log(individualArrayEle);
+    if(individualArrayEle.length > 1) {
+      //debugger;
+      newCopyArr.push(copyArray(individualArrayEle));
+    } else {
+      newCopyArr.push(individualArrayEle);
+    }
+  }
+  return newCopyArr;
+  //return JSON.stringify(newCopyArr);
 };
+
+var array1 = [ [ "a" ], [ "b" ], [ "c" ], [ "d", ["e"] ], [ "f" ] ];
+var array2 = copyArray(array1);
+console.log(array2); // [ [ "a" ], [ "b" ], [ "c" ], [ "d", ["e"] ], [ "f" ] ];
+console.log(array1 === array2); // false
+console.log(array1[3] === array2[3]); // false
